@@ -242,6 +242,8 @@ def generate():
                             n2 = int()
                             temp_list.remove(i)
                             for t in range(len(temp_list)+1):
+                                if time.time()- timestart > 3:
+                                    break
                                 temp_list.insert(t, i)
                                 if Graph_Matrix[i][temp_list[n2+1]] == 1 and Graph_Matrix[temp_list[n2+1]][i] == 1:
                                     n2+=1
@@ -262,12 +264,13 @@ def generate():
                     g_num += 1
                     print(f"The component number {g_num} is : {k}")
                     tim = False
-
+                if time.time()- timestart > 3:
+                    print("Something wrong happend with the graph, please rerun the programme")
 
 
     ########################################
 
 
-# generate()
+generate()
 
 
