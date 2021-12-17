@@ -1,5 +1,7 @@
 from Generate import generate, Graph_Matrix, c_graphs
 
+# THis programme checks if the generated graphs has an euler path
+
 x = int()
 circ_num = int()
 test_graph = list()
@@ -11,17 +13,18 @@ def euler():
     for array in Graph_Matrix:
         for i in array:
             x += i
-        if x % 2:
+        if x % 2: # if all has even degree, then it has an euler circuit
             x = int()
             euler_c = True
             pass
-        else:
+        else: # if any of the arrays/verticies has an odd degree, so there is no euler's circuit here
             euler_c = False
             print("The Main graph doesn't have an euler circuit as one or more of the verticies has an odd degree...")
             break
 
-    if euler_c == True:
+    if euler_c == True: # if there is an euler circuit........................
         for graph in c_graphs: 
+            # print it after making sure it is a circuit.....(first and last vertix are the same)
             for vertix in graph:
                 if vertix not in test_graph:
                     test_graph.append(vertix)
