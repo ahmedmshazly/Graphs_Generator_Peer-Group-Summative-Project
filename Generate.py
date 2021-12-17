@@ -247,7 +247,7 @@ def generate():
         temp_list = list()
         del C1[0]
 
-## This section has been made to reorgnize the generated strigs of teh components because we found that
+## This section has been made to reorganize the generated strigs of teh components because we found that
 # sometimes it generates with wrong order, so here we will check if every vertix is in the right place.....
 
         for g in C1: # to check every compnent in the compononents list
